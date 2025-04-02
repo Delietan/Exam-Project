@@ -1,5 +1,7 @@
 ## ABOUT THE PROJECT
 
+### General
+
 - This was my final exam project for my Professional Degree in Backend Development
     - The project received grade A
 - The project consists of:
@@ -10,6 +12,10 @@
     - Jest And Supertest for Integration Testing
     - Swagger Documentation
     - Admin Dashboard Frontend with EJS and Bootstrap
+
+### Functionality of the software
+
+- Lipsum
 
 ## HOW TO USE
 
