@@ -17,7 +17,7 @@
 ### Functionality of the software
 
 - This software allows you to run an e-commerce. A company using this software would be able to upload a product list from local data or from an external API.
-- Through the use of the Admin Dashboard, an admin user would be able to execute CRUD operations (Create, Read, Update and Delete) for all Proucts, Brands, Categories, Memberships, Roles, Orders, Order statuses and Users.
+- Through the use of the "Admin Dashboard", an admin user would be able to execute CRUD operations (Create, Read, Update and Delete) for all Proucts, Brands, Categories, Memberships, Roles, Orders, Order statuses and Users.
 - Users will automatically have thier membership upgraded, depending on the quantity of items they have purchased, and receive discounts based on the membership.
 - Complete documentation for the API is included. Read more below.
 - Integration testing for the API is included. Read more below.
