@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-primary text-light">
+    <div class="container mt-1">
+        
+        <%- include('./partials/navbar.ejs') %>
+
+        <!-- Orders List Table -->
+        <h2 class="text-center mb-4 mt-5">Order List</h2>
+        <table class="table table-light table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Order Number</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th>User id</th>
+                    <th>Order Status</th>
+                    <th>Total price</th>
+                    <th>Original price (without discount)</th>
+                    <th>Items in order</th>
+                    <th>Membership</th>
+                    <th>Discount</th>
+                    <th class="text-end pe-3">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% orders.forEach(function(order) { %> 
+                <tr>
+                    <td><%= order.id %></td>
+                    <td><%= order.uniqueId || 0 %></td>
+                    <td><small><%= order.createdAt %></small></td>
+                    <td><small><%= order.updatedAt %></small></td>
+                    <td><%= order.UserId %></td>
+                    <td><%= order.OrderStatusName %></td>
+                    <td><%= order.TotalPrice %></td>
+                    <td><%= order.OriginalPrice %></td>
+                    <td><%= order.TotalQuantity %></td>
+                    <td><%= order.capturedMembershipName %></td>
+                    <td><%= order.capturedMembershipDiscount %></td>
+                    <td class="text-end">
+                        <button class="btn btn-primary edit-order-btn" 
+                                data-id="<%= order.id %>" 
+                                data-statusid="<%= order.OrderStatusId %>" 
+                                data-bs-toggle="modal" data-bs-target="#editOrderModal">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger delete-order-btn" data-id="<%= order.id %>">Delete</button>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+        <!-- Edit Order Modal -->
+        <div class="modal fade" id="editOrderModal" tabindex="-1" aria-labelledby="editOrderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-primary">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editOrderModalLabel">Edit Order</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editOrderForm">
+                            <!-- Order ID (Disabled) -->
+                            <div class="mb-3">
+                                <label for="editOrderId" class="form-label">Order ID</label>
+                                <input type="text" class="form-control bg-secondary text-light" id="editOrderId" disabled>
+                            </div>
+
+                            <!-- Order Status Dropdown -->
+                            <div class="mb-3">
+                                <label for="editOrderStatus" class="form-label">Order Status</label>
+                                <select class="form-select" id="editOrderStatus">
+                                    <% statuses.forEach(function(status) { %>
+                                        <option value="<%= status.id %>"><%= status.OrderStatus %></option>
+                                    <% }); %>
+                                </select>
+                            </div>
+
+                            <div class="text-end">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="/javascript/orders.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

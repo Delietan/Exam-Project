@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Login</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <section class="vh-100">
+      <div class="container-fluid h-100">
+        <div class="row h-100">
+          <!-- Left-side Image -->
+          <div class="col-sm-6 d-none d-sm-block">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+              alt="Login image" class="w-100 h-100" style="object-fit: cover; object-position: left;">
+          </div>
+
+          <!-- Right-side Login Form -->
+          <div class="col-sm-6 d-flex flex-column mt-5 text-black px-5 pt-2">
+            <div class="mb-4">
+              <span class="h1 fw-bold">BED EP Admin Login</span>
+            </div>
+
+
+            <form style="width: 23rem;" method="POST" action="/login">
+              <h3 class="fw-normal mb-3 pb-3"></h3>
+
+              
+              <% if (error) { %>
+                <div class="alert alert-danger"><%= error %></div>
+              <% } %>
+          
+              <!-- Email Input -->
+              <!-- <div class="form-outline mb-4">
+                  <label class="form-label" for="inputEmail">Email address</label>
+                  <input type="text" name="username" id="inputEmail" class="form-control form-control-lg" value="admin" />
+              </div> -->
+          
+              <!-- Password Input -->
+              <!-- <div class="form-outline mb-4">
+                  <label class="form-label" for="inputPassword">Password</label>
+                  <input type="password" name="password" id="inputPassword" class="form-control form-control-lg" value="admin" />
+              </div> -->
+
+              <!-- Email Input -->
+              <div class="form-floating mb-3">
+                <input type="text" name="emailOrUsername" id="inputEmail" class="form-control form-control-lg" placeholder="name@example.com" >
+                <label for="floatingInput">Email / Username</label>
+              </div>
+
+              <!-- Password Input -->
+              <div class="form-floating mb-3">
+                <input type="password" name="password" id="inputPassword" class="form-control form-control-lg" placeholder="Password" >
+                <label for="floatingPassword">Password</label>
+              </div>
+          
+              <!-- Login Button -->
+              <div class="pt-1 mb-4">
+                  <button class="btn btn-info btn-lg btn-block" type="submit">Log in</button>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script src="/javascript/functions.js"></script> -->
+  </body>
+</html>

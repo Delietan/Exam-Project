@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - Memberships</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-primary text-light">
+    <div class="container mt-1">
+        
+        <%- include('./partials/navbar.ejs') %>
+
+        <!-- Memberships List Table -->
+        <h2 class="text-center mb-4 mt-5">Membership List</h2>
+
+        <div class="d-flex justify-content-end mb-1">
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addMembershipModal">+ Add Membership</button>
+        </div>
+
+        <table class="table table-light table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Discount</th>
+                    <th>Threshold</th>
+                    <th class="text-end pe-3">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% memberships.forEach(function(membership) { %> 
+                <tr>
+                    <td><%= membership.id %></td>
+                    <td><%= membership.Name %></td>
+                    <td><%= membership.Discount %></td>
+                    <td><%= membership.Threshold %></td>
+                    <td class="text-end">
+                        <button class="btn btn-primary edit-membership-btn" 
+                                data-id="<%= membership.id %>" 
+                                data-name="<%= membership.Name %>" 
+                                data-discount="<%= membership.Discount %>" 
+                                data-threshold="<%= membership.Threshold %>"
+                                data-bs-toggle="modal" data-bs-target="#editMembershipModal">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger delete-membership-btn" data-id="<%= membership.id %>">Delete</button>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+        <!-- Add Membership Modal -->
+        <div class="modal fade" id="addMembershipModal" tabindex="-1" aria-labelledby="addMembershipModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-primary">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addMembershipModalLabel">Add New Membership</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addMembershipForm">
+                            <div class="mb-3">
+                                <label for="membershipName" class="form-label">Membership Name</label>
+                                <input type="text" class="form-control" id="membershipName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="membershipDiscount" class="form-label">Discount</label>
+                                <input type="text" class="form-control" id="membershipDiscount" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="membershipThreshold" class="form-label">Threshold</label>
+                                <input type="number" class="form-control" id="membershipThreshold" required>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Add Membership</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Membership Modal -->
+        <div class="modal fade" id="editMembershipModal" tabindex="-1" aria-labelledby="editMembershipModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-primary">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editMembershipModalLabel">Edit Membership</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editMembershipForm">
+                            <div class="mb-3">
+                                <label for="editMembershipId" class="form-label">ID</label>
+                                <input type="text" class="form-control bg-secondary" id="editMembershipId" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMembershipName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="editMembershipName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMembershipDiscount" class="form-label">Discount</label>
+                                <input type="text" class="form-control" id="editMembershipDiscount">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMembershipThreshold" class="form-label">Threshold</label>
+                                <input type="number" class="form-control" id="editMembershipThreshold">
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="/javascript/memberships.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>
