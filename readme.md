@@ -1,15 +1,15 @@
 ### ABOUT THE PROJECT
 
 - This was my final exam project for my Professional Degree in Backend Development
-      - The project received grade A
+    - The project received grade A
 - The project consists of:
-      - Complete API for E-commerce using Node with Express.js
-      - MySQL Database
-      - Sequelize ORM
-      - JWT Authentication
-      - Jest And Supertest for Integration Testing
-      - Swagger Documentation
-      - Admin Dashboard Frontend with EJS and Bootstrap
+    - Complete API for E-commerce using Node with Express.js
+    - MySQL Database
+    - Sequelize ORM
+    - JWT Authentication
+    - Jest And Supertest for Integration Testing
+    - Swagger Documentation
+    - Admin Dashboard Frontend with EJS and Bootstrap
 
 ### HOW TO USE
 
