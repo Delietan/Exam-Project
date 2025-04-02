@@ -13,7 +13,7 @@
 
 ### HOW TO USE
 
-- Download repository
+- Clone repository
 - Open repository in code editor, for example VSCode.
 - Open two terminals
     - In one terminal, go to destination /front-end/
@@ -69,4 +69,4 @@ This includes files:
 
 ### AI assistance
 
-- AI has played a valuable role in the development of the project. It has mainly contributed to correcting syntax errors and suggesting soltuions. It has definitely not been as helpful as one would think, because it can't comprehend a repository with so many files. It is best for solving small localised problems, where you yourself decide the logic and progression, while the AI assists implementing it.
+- AI has played a valuable role in the development of the project. It has mainly contributed to correcting syntax errors and suggesting solutions. It has definitely not been as helpful as one would think, because it can't comprehend a repository with so many files. It is best for solving small localised problems, where you yourself decide the logic and progression, while the AI assists implementing it.
