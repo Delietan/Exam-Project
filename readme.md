@@ -11,7 +11,7 @@
     - Swagger Documentation
     - Admin Dashboard Frontend with EJS and Bootstrap
 
-### HOW TO USE
+## HOW TO USE
 
 - Clone repository
 - Open repository in code editor, for example VSCode.
