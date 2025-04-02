@@ -1,4 +1,4 @@
-### ABOUT THE PROJECT
+## ABOUT THE PROJECT
 
 - This was my final exam project for my Professional Degree in Backend Development
     - The project received grade A
